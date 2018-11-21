@@ -68,24 +68,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if ((indexPath.row + 1) % 3 != 0){
+//        if ((indexPath.row + 1) % 4 != 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell_dz", for: indexPath) as! MyCell
             //cell.label?.text = "ww"
             cell.img?.image = UIImage(named: "myLittlePony")
             return cell
-        }
-        else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "my_cell2", for: indexPath)
-            cell.textLabel?.text = "здесь могла быть ваша реклама"
-            //cell.imageView?.image = UIImage(named: "mainMenu")
-            return cell
-        }
+//        }
+//        else{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "my_cell2", for: indexPath)
+//            cell.textLabel?.text = "здесь могла быть ваша реклама"
+//            //cell.imageView?.image = UIImage(named: "mainMenu")
+//            return cell
+//        }
         //return cell
     }
 
