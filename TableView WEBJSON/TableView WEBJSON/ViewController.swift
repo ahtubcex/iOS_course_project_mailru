@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tapme: UIBarButtonItem!
+    
     
     @IBAction func tapped(_ sender: Any) {
         self.rlddata()
