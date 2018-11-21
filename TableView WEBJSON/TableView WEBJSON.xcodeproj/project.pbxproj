@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1CD69821A5AD84002C1D42 /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1CD69721A5AD84002C1D42 /* Entry.storyboard */; };
 		75E7B587218256460008BD1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7B586218256460008BD1E /* AppDelegate.swift */; };
 		75E7B589218256460008BD1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7B588218256460008BD1E /* ViewController.swift */; };
 		75E7B58C218256460008BD1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E7B58A218256460008BD1E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1CD69721A5AD84002C1D42 /* Entry.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
 		75E7B583218256460008BD1E /* TableView+Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableView+Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E7B586218256460008BD1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E7B588218256460008BD1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				75E7B588218256460008BD1E /* ViewController.swift */,
 				75E7B59A21825DFC0008BD1E /* PostTableViewCell.swift */,
 				75E7B58A218256460008BD1E /* Main.storyboard */,
+				1F1CD69721A5AD84002C1D42 /* Entry.storyboard */,
 				75E7B58D218256490008BD1E /* Assets.xcassets */,
 				75E7B58F218256490008BD1E /* LaunchScreen.storyboard */,
 				75E7B592218256490008BD1E /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				7D0939BC2199CCF000265D58 /* AnimeCell.xib in Resources */,
 				75E7B591218256490008BD1E /* LaunchScreen.storyboard in Resources */,
+				1F1CD69821A5AD84002C1D42 /* Entry.storyboard in Resources */,
 				75E7B58E218256490008BD1E /* Assets.xcassets in Resources */,
 				75E7B58C218256460008BD1E /* Main.storyboard in Resources */,
 			);
@@ -303,14 +307,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P9784LPU65;
 				INFOPLIST_FILE = "$(SRCROOT)/TableView WEBJSON/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sardart.TableView-Network";
+				PRODUCT_BUNDLE_IDENTIFIER = "TableView-Network";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,14 +326,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P9784LPU65;
 				INFOPLIST_FILE = "$(SRCROOT)/TableView WEBJSON/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sardart.TableView-Network";
+				PRODUCT_BUNDLE_IDENTIFIER = "TableView-Network";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
