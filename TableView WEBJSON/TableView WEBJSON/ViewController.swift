@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guard let cell1 = tableView.dequeueReusableCell(withIdentifier: self.cellName, for: indexPath) as? AnimeCell else { return UITableViewCell()}
             let name1 = self.names[indexPath.row]
        
-        let imageURL: URL = URL(string: " https://github.com/ahtubcex/mail_ios_course/raw/master/TableView%20WEBJSON/img/"+name1+".jpg")!
+        let imageURL: URL = URL(string: "https://github.com/ahtubcex/mail_ios_course/raw/master/TableView%20WEBJSON/img/"+name1+".jpg")!
         let data = try? Data(contentsOf: imageURL)
             cell1.configureView(anime: self.posts[indexPath.row], image: UIImage(data: data!)!)
         
@@ -113,7 +113,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let selectedIndexPath = tableView.indexPathForSelectedRow?.item as! Int
 //            print(selectedIndexPath)
             let name1 = names[selectedIndexPath]
-            let imageURL: URL = URL(string: "https://github.com/techparkios/ios-lectures-fall-2018/raw/master/06/"+name1+".jpg")!
+            let imageURL: URL = URL(string: "https://github.com/ahtubcex/mail_ios_course/raw/master/TableView%20WEBJSON/img/"+name1+".jpg")!
             let data = try? Data(contentsOf: imageURL)
             vc.myspecialImage = UIImage(data: data!)!
         }
