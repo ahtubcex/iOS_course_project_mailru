@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.rlddata()
     }
     var posts = [Post]()
-    let names : [String] = ["usagi", "gto", "monster", "attack_on_titan","beck", "clannad", "code_geass", "fma"]
+    let names : [String] = ["ak74m", "akm", "pm_glushitel_1", "m4a1", "mp5silencer", "m1a", "rsass"]
     private let segueName = "toFull"
     private let cellName = "AnimeCell"
     
@@ -77,7 +77,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          //DispatchQueue.main.async {
             guard let cell1 = tableView.dequeueReusableCell(withIdentifier: self.cellName, for: indexPath) as? AnimeCell else { return UITableViewCell()}
             let name1 = self.names[indexPath.row]
-        let imageURL: URL = URL(string: "https://github.com/techparkios/ios-lectures-fall-2018/raw/master/06/"+name1+".jpg")!
+       
+        let imageURL: URL = URL(string: " https://github.com/ahtubcex/mail_ios_course/raw/master/TableView%20WEBJSON/img/"+name1+".jpg")!
         let data = try? Data(contentsOf: imageURL)
             cell1.configureView(anime: self.posts[indexPath.row], image: UIImage(data: data!)!)
         
