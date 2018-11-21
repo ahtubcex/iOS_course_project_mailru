@@ -74,12 +74,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell1 = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as? AnimeCell else { return UITableViewCell()}
-        let name1 = names[indexPath.row]
+         //DispatchQueue.main.async {
+            guard let cell1 = tableView.dequeueReusableCell(withIdentifier: self.cellName, for: indexPath) as? AnimeCell else { return UITableViewCell()}
+            let name1 = self.names[indexPath.row]
         let imageURL: URL = URL(string: "https://github.com/techparkios/ios-lectures-fall-2018/raw/master/06/"+name1+".jpg")!
         let data = try? Data(contentsOf: imageURL)
-        cell1.configureView(anime: posts[indexPath.row], image: UIImage(data: data!)!)
+            cell1.configureView(anime: self.posts[indexPath.row], image: UIImage(data: data!)!)
+        
         return cell1
+        
 
     }
 
