@@ -36,21 +36,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="7MB-Dn-MhC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dXc-cC-kUL">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update"/>
-                                <connections>
-                                    <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cL2-fo-a6o"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6"/>
                     <connections>
                         <outlet property="tableView" destination="ba6-fs-cIC" id="e15-ut-qD9"/>
-                        <outlet property="tapme" destination="7MB-Dn-MhC" id="8Xr-d5-Yvg"/>
                         <segue destination="UUV-ef-xVA" kind="show" identifier="toFull" id="T9S-cq-aOz"/>
                     </connections>
                 </viewController>
