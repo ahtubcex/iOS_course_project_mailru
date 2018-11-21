@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="Entry" id="pUu-Qh-0Io" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgd-Ex-G8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566" y="464"/>
+            <point key="canvasLocation" x="-295" y="1312"/>
         </scene>
         <!--Guns-->
         <scene sceneID="tne-QT-ifu">
@@ -45,13 +45,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6">
-                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="YeJ-ac-8R8">
-                            <connections>
-                                <segue destination="pUu-Qh-0Io" kind="showDetail" id="fdP-eh-tvq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6"/>
                     <connections>
                         <outlet property="tableView" destination="ba6-fs-cIC" id="e15-ut-qD9"/>
                         <segue destination="UUV-ef-xVA" kind="show" identifier="toFull" id="T9S-cq-aOz"/>
@@ -115,11 +109,25 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIU-Vi-Dpf">
+                                <rect key="frame" x="55" y="587" width="265" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Kt2-XR-7PE"/>
+                                </constraints>
+                                <state key="normal" title="Выйти">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pUu-Qh-0Io" kind="showDetail" id="GtR-dK-dQV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="bottom" secondItem="rk4-ea-PTh" secondAttribute="bottom" id="0rQ-uD-gK5"/>
                             <constraint firstItem="EDD-J7-bl1" firstAttribute="top" secondItem="7NK-GE-3wV" secondAttribute="bottom" constant="20" id="2jU-68-DTr"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="xIU-Vi-Dpf" secondAttribute="trailing" constant="55" id="7FD-mm-YHS"/>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="7NK-GE-3wV" secondAttribute="trailing" constant="20" id="7w4-Zz-aQx"/>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="KUK-ak-OBY" secondAttribute="trailing" constant="20" id="8Gp-vY-H5g"/>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="EDD-J7-bl1" secondAttribute="trailing" constant="20" id="BdF-nv-hSf"/>
@@ -129,10 +137,12 @@
                             <constraint firstItem="AhY-Uh-CSd" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="OlQ-fK-Km9"/>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="AhY-Uh-CSd" secondAttribute="trailing" constant="20" id="Owp-46-ebj"/>
                             <constraint firstItem="EDD-J7-bl1" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="Yyv-FC-8dx"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="bottom" secondItem="xIU-Vi-Dpf" secondAttribute="bottom" constant="35" id="c9G-Qf-0nR"/>
                             <constraint firstItem="7NK-GE-3wV" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="cZh-VG-DQ8"/>
                             <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="rk4-ea-PTh" secondAttribute="trailing" id="dGG-fd-RMK"/>
                             <constraint firstItem="rk4-ea-PTh" firstAttribute="top" secondItem="sxV-89-KnG" secondAttribute="top" id="kzh-R9-ksl"/>
                             <constraint firstItem="7NK-GE-3wV" firstAttribute="top" secondItem="KUK-ak-OBY" secondAttribute="bottom" constant="20" id="lYa-z5-uLb"/>
+                            <constraint firstItem="xIU-Vi-Dpf" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="55" id="m60-LS-Rqh"/>
                             <constraint firstItem="KUK-ak-OBY" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="pl2-zk-jeY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sxV-89-KnG"/>
