@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Entry-->
+        <scene sceneID="UmZ-tb-yRu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Entry" id="pUu-Qh-0Io" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgd-Ex-G8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="464"/>
+        </scene>
         <!--Guns-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -36,7 +44,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6"/>
+                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="YeJ-ac-8R8">
+                            <connections>
+                                <segue destination="pUu-Qh-0Io" kind="showDetail" id="fdP-eh-tvq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ba6-fs-cIC" id="e15-ut-qD9"/>
                         <segue destination="UUV-ef-xVA" kind="show" identifier="toFull" id="T9S-cq-aOz"/>
@@ -45,6 +59,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024.8" y="792.95352323838085"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Woo-LC-g7S">
+            <objects>
+                <viewController id="buJ-Hq-fgl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nAV-5P-hH8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainMenu" translatesAutoresizingMaskIntoConstraints="NO" id="rk4-ea-PTh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Uh-CSd">
+                                <rect key="frame" x="20" y="84" width="335" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="a7h-2t-SRA"/>
+                                </constraints>
+                                <state key="normal" title="Список оружия">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="bcf-dK-Ch1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUK-ak-OBY">
+                                <rect key="frame" x="20" y="194" width="335" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="4sb-Hg-Rxt"/>
+                                </constraints>
+                                <state key="normal" title="Список квестов">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NK-GE-3wV">
+                                <rect key="frame" x="20" y="304" width="335" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="fMH-ep-C1p"/>
+                                </constraints>
+                                <state key="normal" title="Карты">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDD-J7-bl1">
+                                <rect key="frame" x="20" y="414" width="335" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="15X-MM-Vtj"/>
+                                </constraints>
+                                <state key="normal" title="Форум">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="bottom" secondItem="rk4-ea-PTh" secondAttribute="bottom" id="0rQ-uD-gK5"/>
+                            <constraint firstItem="EDD-J7-bl1" firstAttribute="top" secondItem="7NK-GE-3wV" secondAttribute="bottom" constant="20" id="2jU-68-DTr"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="7NK-GE-3wV" secondAttribute="trailing" constant="20" id="7w4-Zz-aQx"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="KUK-ak-OBY" secondAttribute="trailing" constant="20" id="8Gp-vY-H5g"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="EDD-J7-bl1" secondAttribute="trailing" constant="20" id="BdF-nv-hSf"/>
+                            <constraint firstItem="KUK-ak-OBY" firstAttribute="top" secondItem="AhY-Uh-CSd" secondAttribute="bottom" constant="20" id="Gjc-cc-NtE"/>
+                            <constraint firstItem="AhY-Uh-CSd" firstAttribute="top" secondItem="sxV-89-KnG" secondAttribute="top" constant="20" id="HG7-jJ-oRY"/>
+                            <constraint firstItem="rk4-ea-PTh" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" id="Ijn-h7-FsU"/>
+                            <constraint firstItem="AhY-Uh-CSd" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="OlQ-fK-Km9"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="AhY-Uh-CSd" secondAttribute="trailing" constant="20" id="Owp-46-ebj"/>
+                            <constraint firstItem="EDD-J7-bl1" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="Yyv-FC-8dx"/>
+                            <constraint firstItem="7NK-GE-3wV" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="cZh-VG-DQ8"/>
+                            <constraint firstItem="sxV-89-KnG" firstAttribute="trailing" secondItem="rk4-ea-PTh" secondAttribute="trailing" id="dGG-fd-RMK"/>
+                            <constraint firstItem="rk4-ea-PTh" firstAttribute="top" secondItem="sxV-89-KnG" secondAttribute="top" id="kzh-R9-ksl"/>
+                            <constraint firstItem="7NK-GE-3wV" firstAttribute="top" secondItem="KUK-ak-OBY" secondAttribute="bottom" constant="20" id="lYa-z5-uLb"/>
+                            <constraint firstItem="KUK-ak-OBY" firstAttribute="leading" secondItem="sxV-89-KnG" secondAttribute="leading" constant="20" id="pl2-zk-jeY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sxV-89-KnG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MqW-nH-Fia"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZb-qL-aLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="1561"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="QxS-U2-ApC">
@@ -142,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLF-qU-EJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733.5999999999999" y="792.50374812593714"/>
+            <point key="canvasLocation" x="1814" y="1269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KTI-q5-McE">
@@ -155,12 +251,15 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e2w-43-pcc"/>
+                        <segue destination="buJ-Hq-fgl" kind="relationship" relationship="rootViewController" id="gbS-o9-Ung"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3m-Gr-3VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208.80000000000001" y="792.95352323838085"/>
+            <point key="canvasLocation" x="-318" y="793"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mainMenu" width="382" height="694"/>
+    </resources>
 </document>
