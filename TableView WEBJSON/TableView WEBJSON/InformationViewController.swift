@@ -21,9 +21,9 @@ class InformationViewController : UIViewController {
     
     func setupUI(specialImage : UIImage){
         nameLabel.text = "Название:"+anime.name
-        genreLabel.text = "Жанр:"+anime.genre
-        episodesLabel.text = "Количество эпизодов:"+anime.episodes
-        episodesLengthLabel.text = "Продолжительность:"+anime.episodes_length
+        genreLabel.text = "Тип:"+anime.type
+        episodesLabel.text = "Калибр:"+anime.caliber
+        episodesLengthLabel.text = "Скорострельность:"+anime.rate_of_fire
         descLabel.text = anime.description
         image.image = specialImage
     }

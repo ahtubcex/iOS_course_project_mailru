@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         for items in names{
            
-        let urlString = "https://raw.githubusercontent.com/techparkios/ios-lectures-fall-2018/master/06/"+items+".json"
+        let urlString = "https://github.com/ahtubcex/mail_ios_course/raw/master/TableView%20WEBJSON/json/"+items+".json"
 
         guard let url = URL(string: urlString) else { return }
         

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Animes-->
+        <!--Guns-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableView_Network" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Animes" id="jHK-t2-xn6">
+                    <navigationItem key="navigationItem" title="Guns" id="jHK-t2-xn6">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="7MB-Dn-MhC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dXc-cC-kUL">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
