@@ -26,6 +26,7 @@ class AddOrder: UIViewController {
         print(fioText.text)
         print(phoneText.text)
         print(dataPick.date)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
