@@ -12,6 +12,7 @@ import RealmSwift
 
 class LoginViewController : UIViewController{
     
+    private let seguename = "toMain"
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func loginButton(_ sender: Any) {
@@ -56,4 +57,20 @@ func callAlert(){
         loginField.text = ""
         passwordField.text = ""
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == seguename{
+            guard
+            let vc = segue.destination as? ViewController
+                else {return}
+            let realm = try! Realm()
+            let login = loginField.text!
+            let checkingPerson = realm.objects(User.self)   //заходим  в базу
+            let filtered = checkingPerson.filter("user_id == %@",login).first
+            if filtered != nil {
+                vc.user = filtered!}
+        }
+    }
+    
 }

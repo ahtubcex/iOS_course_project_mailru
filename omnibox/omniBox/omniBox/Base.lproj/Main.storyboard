@@ -56,7 +56,7 @@
                                 <state key="normal" title="Войти"/>
                                 <connections>
                                     <action selector="loginButton:" destination="i2d-8z-23B" eventType="touchUpInside" id="G68-QC-5Fy"/>
-                                    <segue destination="y9n-of-yDt" kind="show" id="tG9-PU-ix9"/>
+                                    <segue destination="y9n-of-yDt" kind="show" identifier="toMain" id="tG9-PU-ix9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-2W-Oep">
