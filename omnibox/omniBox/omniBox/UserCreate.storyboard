@@ -39,7 +39,7 @@
                                 <rect key="frame" x="114" y="134" width="241" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4X-9a-eOf">
                                 <rect key="frame" x="20" y="184" width="335" height="30"/>
@@ -51,7 +51,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhi-6A-W4R">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Новый пользователь" id="wAv-c3-yh4"/>
+                                    <navigationItem title="Новый пользователь" id="wAv-c3-yh4">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="5xh-fo-YJR">
+                                            <connections>
+                                                <action selector="backButton:" destination="sUZ-Gj-d8M" id="lxd-6l-acb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -81,6 +87,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gzG-KU-RnN"/>
                     </view>
+                    <connections>
+                        <outlet property="loginField" destination="Gik-KP-m7b" id="4oK-S1-cLh"/>
+                        <outlet property="passwordField" destination="ewa-4V-NCx" id="XAC-iZ-jMO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-m2-Dn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
