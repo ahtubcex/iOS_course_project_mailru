@@ -15,5 +15,4 @@ class User: Object{
     @objc dynamic var isAdmin : Bool = false
 
     
-    
 }
