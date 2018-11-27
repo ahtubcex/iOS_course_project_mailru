@@ -16,6 +16,4 @@ class Item: Object{
     @objc dynamic var photo_url : String  = ""
     @objc dynamic var size : String = ""
     
-    
-    
 }

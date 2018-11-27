@@ -125,7 +125,19 @@
                     <view key="view" contentMode="scaleToFill" id="v8m-e3-f4U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kRY-EX-AGB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kRY-EX-AGB" firstAttribute="top" secondItem="ZSt-L1-EvK" secondAttribute="top" id="4ZC-fi-bod"/>
+                            <constraint firstItem="kRY-EX-AGB" firstAttribute="leading" secondItem="ZSt-L1-EvK" secondAttribute="leading" id="6wx-Ag-XNs"/>
+                            <constraint firstItem="ZSt-L1-EvK" firstAttribute="trailing" secondItem="kRY-EX-AGB" secondAttribute="trailing" id="gsQ-5j-exU"/>
+                            <constraint firstItem="ZSt-L1-EvK" firstAttribute="bottom" secondItem="kRY-EX-AGB" secondAttribute="bottom" id="kIc-0y-xtl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZSt-L1-EvK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Заказы" id="sCP-m9-57x">
@@ -135,11 +147,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Добавить"/>
                                 <connections>
-                                    <segue destination="W6p-Pm-Ijy" kind="showDetail" id="Igy-df-cKQ"/>
+                                    <segue destination="W6p-Pm-Ijy" kind="showDetail" identifier="" id="Igy-df-cKQ"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="kRY-EX-AGB" id="bPp-bp-uUY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iun-Mc-vWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
