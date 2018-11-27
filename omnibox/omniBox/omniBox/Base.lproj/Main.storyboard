@@ -61,7 +61,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-2W-Oep">
                                 <rect key="frame" x="20" y="234" width="335" height="30"/>
-                                <state key="normal" title="Зарегестрироваться"/>
+                                <state key="normal" title="Зарегистрироваться"/>
                                 <connections>
                                     <segue destination="23p-0F-N1C" kind="showDetail" id="2L7-5q-XPL"/>
                                 </connections>
