@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var user = User()
     var orders = [Order]()
     let cellName = "orderCell"
+    let seguename = "toOrder"
     
     lazy var refresh : UIRefreshControl = {  //сделал для обновления данных после добавления
         var refresh = UIRefreshControl()
@@ -79,6 +80,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 150
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == seguename{
+            guard
+                let vc = segue.destination as? DisplayOrderViewController,
+                let item = sender as? Order
+                else{
+                    return
+            }
+            vc.order = item
+        }
+    }
 
     
 }
