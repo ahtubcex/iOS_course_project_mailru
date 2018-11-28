@@ -32,8 +32,8 @@ class DisplayOrderViewController : UIViewController{
         numberLabel.text = "Номер закаказа:\(order.number)"
         fioLabel.text = "Данные: \(order.fio)"
         phoneLabel.text = "Номер телефона: \(order.phone_number)"
-        arrDateLabel.text = "от \(order.arr_date)"
-        dateToLabel.text = "выдать до\(order.date_to)"
+        arrDateLabel.text = "От \(order.arr_date)"
+        dateToLabel.text = "Выдать до \(order.date_to)"
         itemsLabel.text = "Товары: "
     }
     

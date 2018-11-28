@@ -11,6 +11,13 @@ import RealmSwift
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBAction func switchedAction(_ sender: Any) {
+        
+    }
+    
+    
+    @IBOutlet weak var oldLabel: UILabel!
+    @IBOutlet weak var oldSwitch: UISwitch!
 
     let realm = try! Realm()
     var user = User()
@@ -38,6 +45,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
         self.tableView.addSubview(refresh)
+        self.oldSwitch.setOn(false, animated: true)
+        oldLabel.text = "Выкупленные заказы"
+        self.oldSwitch.addTarget(self, action: #selector(changing(switch:)), for: .valueChanged)
      
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -57,10 +67,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        self.tableView.reloadData()
     }
 
-    func getOrders(){
+    func getAllOrders(){
         let zakazy = realm.objects(Order.self)
         orders = Array(zakazy)
-        print(orders.count)
+//        print(orders.count)
+    }
+    
+    func getOrders(){
+        let zakazy = realm.objects(Order.self).filter("is_sold == false")
+        orders = Array(zakazy)
+//        print(orders.count)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +96,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 150
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = orders[indexPath.row]
+        performSegue(withIdentifier: seguename, sender: item)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == seguename{
             guard
@@ -92,6 +113,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let row = indexPath.row
+        let editingRow = orders[row]
+
+        let deleteAction = UITableViewRowAction(style: .normal , title: "Выкуплен") { _,_ in
+            try! self.realm.write {
+            self.orders[row].is_sold = true
+                DispatchQueue.main.async {
+                    self.getOrders()
+                    tableView.reloadData()
+                }
+            }
+
+        }
+
+        return [deleteAction]
+    }
     
+    @objc func changing(switch : UISwitch){
+        if self.oldSwitch.isOn {
+            DispatchQueue.main.async {
+                self.getAllOrders()
+                self.tableView.reloadData()
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.getOrders()
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 

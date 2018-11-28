@@ -127,16 +127,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kRY-EX-AGB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJB-j7-Kr2">
+                                <rect key="frame" x="323" y="67" width="51" height="34"/>
+                                <connections>
+                                    <action selector="switchedAction:" destination="y9n-of-yDt" eventType="valueChanged" id="NGe-ps-nHy"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klk-bi-yHb">
+                                <rect key="frame" x="3" y="67" width="290" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kRY-EX-AGB" firstAttribute="top" secondItem="ZSt-L1-EvK" secondAttribute="top" id="4ZC-fi-bod"/>
+                            <constraint firstItem="GJB-j7-Kr2" firstAttribute="leading" secondItem="klk-bi-yHb" secondAttribute="trailing" constant="30" id="2C6-Wl-x3e"/>
+                            <constraint firstItem="klk-bi-yHb" firstAttribute="top" secondItem="ZSt-L1-EvK" secondAttribute="top" constant="3" id="4Ss-HL-MDm"/>
+                            <constraint firstItem="kRY-EX-AGB" firstAttribute="top" secondItem="ZSt-L1-EvK" secondAttribute="top" constant="40" id="4ZC-fi-bod"/>
                             <constraint firstItem="kRY-EX-AGB" firstAttribute="leading" secondItem="ZSt-L1-EvK" secondAttribute="leading" id="6wx-Ag-XNs"/>
+                            <constraint firstItem="klk-bi-yHb" firstAttribute="leading" secondItem="ZSt-L1-EvK" secondAttribute="leading" constant="3" id="CmY-Yu-ASc"/>
+                            <constraint firstItem="kRY-EX-AGB" firstAttribute="top" secondItem="klk-bi-yHb" secondAttribute="bottom" constant="3" id="ESe-Ef-4G6"/>
+                            <constraint firstItem="ZSt-L1-EvK" firstAttribute="trailing" secondItem="GJB-j7-Kr2" secondAttribute="trailing" constant="3" id="J2l-YR-v0R"/>
                             <constraint firstItem="ZSt-L1-EvK" firstAttribute="trailing" secondItem="kRY-EX-AGB" secondAttribute="trailing" id="gsQ-5j-exU"/>
                             <constraint firstItem="ZSt-L1-EvK" firstAttribute="bottom" secondItem="kRY-EX-AGB" secondAttribute="bottom" id="kIc-0y-xtl"/>
+                            <constraint firstItem="kRY-EX-AGB" firstAttribute="top" secondItem="GJB-j7-Kr2" secondAttribute="bottom" constant="3" id="mhe-i3-ugl"/>
+                            <constraint firstItem="GJB-j7-Kr2" firstAttribute="top" secondItem="ZSt-L1-EvK" secondAttribute="top" constant="3" id="tzL-bG-YDy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZSt-L1-EvK"/>
                     </view>
@@ -153,6 +172,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="oldLabel" destination="klk-bi-yHb" id="GTn-5L-SV1"/>
+                        <outlet property="oldSwitch" destination="GJB-j7-Kr2" id="PEB-TC-aWC"/>
                         <outlet property="tableView" destination="kRY-EX-AGB" id="bPp-bp-uUY"/>
                         <segue destination="uhq-yY-s53" kind="show" identifier="toOrder" id="OHz-6J-Meo"/>
                     </connections>

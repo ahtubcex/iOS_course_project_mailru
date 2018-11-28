@@ -24,5 +24,6 @@ class OrderCell: UITableViewCell {
         self.orderLabel.text = "Заказ: \(order.number)"
         self.fioLabel.text = "\(order.fio)"
         self.phoneLabel.text = "\(order.phone_number)"
+        if order.is_sold {self.backgroundColor = UIColor.green} else {self.backgroundColor = UIColor.white}
     }
 }
