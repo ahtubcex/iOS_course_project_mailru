@@ -36,15 +36,16 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func addOrder(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        let today = dateFormatter.string(from: dataPick.date)
+        let today = dateFormatter.string(from: dataPick.date)  // from dataPicker to string date
         let realm = try! Realm()
         let new_order = Order()
         new_order.number = self.orderText.text!
         new_order.fio = self.fioText.text!
         new_order.phone_number = self.phoneText.text!
         new_order.arr_date = today
-        new_order.date_to = splitDate(st: today)
-        new_order.items.append(objectsIn: items) 
+        var date_to = Calendar.current.date(byAdding: .day, value: 5, to: (dateFormatter.date(from: today))!) //add 5 day
+        new_order.date_to = dateFormatter.string(from: date_to!)
+        new_order.items.append(objectsIn: items)
         print(new_order)
         
         try! realm.write {
@@ -52,12 +53,12 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func splitDate(st : String) -> String{     //adding 5 days
-        var date_to = st.components(separatedBy: "-")[0]
-        date_to = String(Int(date_to)!+5)+"-"+st.components(separatedBy: "-")[1]+"-"+st.components(separatedBy: "-")[2]
-        return date_to
-    }
-    
+//    func splitDate(st : String) -> String{     //adding 5 days
+//        var date_to = st.components(separatedBy: "-")[0]
+//        date_to = String(Int(date_to)!+5)+"-"+st.components(separatedBy: "-")[1]+"-"+st.components(separatedBy: "-")[2]
+//        return date_to
+//    }
+//
     func callAddAlert(){
         let alertView = UIAlertController(title: "Добавление заказов", message: nil, preferredStyle: .alert)
         let add = UIAlertAction(title: "Добавить", style: .default) { (action) in
