@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class AddOrder: UIViewController {
+class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -19,7 +20,13 @@ class AddOrder: UIViewController {
     @IBOutlet weak var fioText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
     @IBOutlet weak var dataPick: UIDatePicker!
-    
+
+    var items = [Item]()
+    @IBOutlet weak var tovarTable: UITableView!
+    let cellName = "itemCell"
+    @IBAction func addTovarButtob(_ sender: Any) {
+        callAddAlert()
+    }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         addOrder()
@@ -37,6 +44,7 @@ class AddOrder: UIViewController {
         new_order.phone_number = self.phoneText.text!
         new_order.arr_date = today
         new_order.date_to = splitDate(st: today)
+        new_order.items.append(objectsIn: items) 
         print(new_order)
         
         try! realm.write {
@@ -50,7 +58,59 @@ class AddOrder: UIViewController {
         return date_to
     }
     
+    func callAddAlert(){
+        let alertView = UIAlertController(title: "Добавление заказов", message: nil, preferredStyle: .alert)
+        let add = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            let addItem = Item()
+            addItem.item_name = alertView.textFields![0].text!
+            addItem.size = alertView.textFields![1].text!
+            self.items.append(addItem)
+            DispatchQueue.main.async {
+                self.tovarTable.reloadData()
+            }
+//            alertView.textFields![0].text
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        alertView.addAction(add)
+        alertView.addAction(cancel)
+        alertView.addTextField { (textfield) in
+            textfield.placeholder = "Артикул"
+        }
+        alertView.addTextField { (textfield) in
+            textfield.placeholder = "Размер"
+        }
+        self.present(alertView, animated: true, completion: {
+            print("Alert worked")
+        })
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items.count == 0 {
+            return 0
+        }else{
+          return items.count
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as? ItemCell else
+        {
+            return UITableViewCell()
+        }
+        cell.configureView(item: items[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    override func viewDidLoad() {
+        tovarTable.dataSource = self
+        tovarTable.delegate = self
+        tovarTable.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+    }
     
 }
 

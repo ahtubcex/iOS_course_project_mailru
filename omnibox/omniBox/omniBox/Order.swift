@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class Order: Object {
     @objc dynamic var number : String = ""
@@ -15,10 +16,12 @@ class Order: Object {
     @objc dynamic var phone_number : String = ""
     @objc dynamic var arr_date : String = ""
     @objc dynamic var date_to : String = ""
-    @objc dynamic var items : Item?
+    var items = List<Item>()
+//    var items : Array<Item> = []
+//    @objc dynamic var items : [Item]?
     @objc dynamic var is_sold : Bool = false
     
-    func addOrder (number: String,fio: String, phone_number: String, arr_date: String, items: Item?, is_sold: Bool ){
-        
-    }
+//    func addOrder (number: String,fio: String, phone_number: String, arr_date: String, items: Item?, is_sold: Bool ){
+//
+//    }
 }
