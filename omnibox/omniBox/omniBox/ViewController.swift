@@ -120,7 +120,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let deleteAction = UITableViewRowAction(style: .normal , title: "Выкуплен") { _,_ in
             try! self.realm.write {
-            self.orders[row].is_sold = true
+            self.orders[row].is_sold = !(self.orders[row].is_sold)
+                self.oldSwitch.setOn(false, animated: true)
                 DispatchQueue.main.async {
                     self.getOrders()
                     tableView.reloadData()
@@ -128,7 +129,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
 
         }
-
         return [deleteAction]
     }
     
@@ -141,6 +141,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else{
             DispatchQueue.main.async {
                 self.getOrders()
+                
                 self.tableView.reloadData()
             }
         }
