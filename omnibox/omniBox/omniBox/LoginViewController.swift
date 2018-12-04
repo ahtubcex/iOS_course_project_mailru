@@ -25,10 +25,11 @@ class LoginViewController : UIViewController{
         let checkingPerson = realm.objects(User.self)   //заходим  в базу
         let filtered = checkingPerson.filter("user_id == %@",login).first //фильтруем и ищем по нужным параметрам
         if filtered != nil {
-            let pass = filtered?.password
+            let pass = filtered?.password as! String
             if (pass == passwordField.text!){
                 print("Excellent!")
             } else {
+                print(pass)
                 print("POWEL HA XYU! parol")
                 callAlert()
                 passwordField.text = ""

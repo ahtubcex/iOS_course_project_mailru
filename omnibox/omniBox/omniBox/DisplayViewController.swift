@@ -15,6 +15,10 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet var tapMe: UIView!
     
+
+    @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var statusSwitch: UISwitch!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var orderTable: UITableView!
     @IBOutlet weak var itemsLabel: UILabel!
     @IBOutlet weak var dateToLabel: UILabel!
@@ -25,6 +29,7 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var headerLabel: UILabel!
     let cellName = "itemCell"
     var order = Order()
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +55,9 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
         arrDateLabel.text = "От \(order.arr_date)"
         dateToLabel.text = "Выдать до \(order.date_to)"
         itemsLabel.text = "Товары: "
+        statusLabel.text = "Статус обзвона и комментарий"
+        statusSwitch.isOn = order.call_status
+        commentField.text = order.comments
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +79,20 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    @IBAction func statusChanged(_ sender: Any) {
+        try! realm.write {
+            order.call_status = statusSwitch.isOn
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if (commentField.text != order.comments) {
+            try! realm.write {
+                order.comments = commentField.text!
+            }
+        }
     }
     
 }

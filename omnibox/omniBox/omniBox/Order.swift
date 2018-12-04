@@ -17,7 +17,8 @@ class Order: Object {
     @objc dynamic var arr_date : String = ""
     @objc dynamic var date_to : String = ""
     var items = List<Item>()
-
     @objc dynamic var is_sold : Bool = false
+    @objc dynamic var comments : String = ""
+    @objc dynamic var call_status : Bool = false
     
 }
