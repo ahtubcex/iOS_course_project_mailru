@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         oldLabel.text = "Выкупленные заказы"
         self.oldSwitch.addTarget(self, action: #selector(changing(switch:)), for: .valueChanged)
         
-        workFire()
+//        workFire()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -150,27 +150,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func workFire()
-    {
-        let databaseref = Database.database().reference()
-        databaseref.child("users").observeSingleEvent(of: .value, with: {
-            snapshot in
-            print(snapshot)
-            for snap in snapshot.children.allObjects as! [DataSnapshot]{
-                guard let dictionary = snap.value as? [String : AnyObject] else {
-                    return
-                }
-                var name = dictionary["Name"] as? String
-                var age = dictionary["Age"] as? Int
-                print(name, age)
-                
-                var UserToAdd = UserFire()
-                UserToAdd.name = name
-                UserToAdd.age.value = age
-                UserToAdd.writeToRealm()
-            }
-        })
-    }
+//    func workFire()
+//    {
+//        let databaseref = Database.database().reference()
+//        databaseref.child("users").observeSingleEvent(of: .value, with: {
+//            snapshot in
+//            print(snapshot)
+//            for snap in snapshot.children.allObjects as! [DataSnapshot]{
+//                guard let dictionary = snap.value as? [String : AnyObject] else {
+//                    return
+//                }
+//                var name = dictionary["Name"] as? String
+//                var age = dictionary["Age"] as? Int
+//                print(name, age)
+//
+//                var UserToAdd = UserFire()
+//                UserToAdd.name = name
+//                UserToAdd.age.value = age
+//                UserToAdd.writeToRealm()
+//            }
+//        })
+//    }
     
 }
 

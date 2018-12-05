@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 import RealmSwift
+import MessageUI
 
-class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
     
 
     @IBOutlet var tapMe: UIView!
@@ -38,13 +40,13 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
         orderTable.delegate = self
         orderTable.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
 //        orderTable.isHidden = true
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideTable))
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyBord))
 //        tapGesture.numberOfTapsRequired = 1
 //        tapMe.addGestureRecognizer(tapGesture)
     }
     
-    @objc func hideTable(){
-        orderTable.isHidden = !(orderTable.isHidden)
+    @objc func hideKeyBord(){
+        self.view.endEditing(true)
     }
     
     func configure(order: Order){
@@ -93,6 +95,32 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
                 order.comments = commentField.text!
             }
         }
+    }
+  
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func sendMessage(_ sender: Any) {
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = self
+        
+        composeVC.recipients = ["\(order.phone_number)"]
+        composeVC.body = "Ваш заказ: \(order.number) готов. Будем рады вас видеть"
+        
+        if MFMessageComposeViewController.canSendText() {
+            self.present(composeVC, animated: true, completion: nil)
+        } else {
+            print("Can't send messages.")
+        }
+        
+    }
+    @IBAction func callButton(_ sender: Any) {
+        print("im here")
+        var phone = "TEL://\(order.phone_number)"
+        print(phone)
+        var url: NSURL = NSURL(string: phone)!
+        UIApplication.shared.openURL(url as URL)
+        
     }
     
 }

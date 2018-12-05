@@ -15,10 +15,10 @@ class UserFire: Object {
     
 }
 
-extension UserFire{
-    func writeToRealm(){
-        try! uiRealm.write {
-            uiRealm.add(self)
-        }
-    }
-}
+//extension UserFire{
+//    func writeToRealm(){
+//        try! uiRealm.write {
+//            uiRealm.add(self)
+//        }
+//    }
+//}

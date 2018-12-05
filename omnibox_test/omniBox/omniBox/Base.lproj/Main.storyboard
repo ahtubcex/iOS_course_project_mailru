@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -260,6 +261,20 @@
                                     <action selector="statusChanged:" destination="uhq-yY-s53" eventType="valueChanged" id="tub-4Y-xzX"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixA-1v-QAe">
+                                <rect key="frame" x="10" y="491" width="152.5" height="30"/>
+                                <state key="normal" title="Позвонить"/>
+                                <connections>
+                                    <action selector="callButton:" destination="uhq-yY-s53" eventType="touchUpInside" id="qmG-4U-CwG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-03-6MX">
+                                <rect key="frame" x="212.5" y="491" width="152.5" height="30"/>
+                                <state key="normal" title="Отправить SMS"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="uhq-yY-s53" eventType="touchUpInside" id="tMc-tZ-muy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -281,12 +296,18 @@
                             <constraint firstItem="Bu5-pT-TAj" firstAttribute="trailing" secondItem="1Ug-5K-8fT" secondAttribute="trailing" constant="10" id="Tk8-6A-pvc"/>
                             <constraint firstItem="Vs9-x7-bnl" firstAttribute="top" secondItem="cR9-WH-WEd" secondAttribute="bottom" constant="10" id="Toi-dj-vRI"/>
                             <constraint firstItem="1Ug-5K-8fT" firstAttribute="top" secondItem="8XR-0N-agv" secondAttribute="bottom" constant="10" id="UKP-bI-2r6"/>
+                            <constraint firstItem="Bu5-pT-TAj" firstAttribute="trailing" secondItem="dXh-03-6MX" secondAttribute="trailing" constant="10" id="W1f-6a-bDl"/>
+                            <constraint firstItem="dXh-03-6MX" firstAttribute="top" secondItem="nGO-gR-ckj" secondAttribute="bottom" constant="10" id="XKQ-8d-UNS"/>
                             <constraint firstItem="Vs9-x7-bnl" firstAttribute="leading" secondItem="Bu5-pT-TAj" secondAttribute="leading" constant="5" id="ZXf-Ah-Fia"/>
+                            <constraint firstItem="ixA-1v-QAe" firstAttribute="width" secondItem="dXh-03-6MX" secondAttribute="width" id="b8X-cI-Qel"/>
+                            <constraint firstItem="ixA-1v-QAe" firstAttribute="top" secondItem="nGO-gR-ckj" secondAttribute="bottom" constant="10" id="bPM-02-bQR"/>
                             <constraint firstItem="1hY-WY-abE" firstAttribute="leading" secondItem="Cjf-GQ-jcO" secondAttribute="leading" constant="10" id="bZG-b0-wZT"/>
                             <constraint firstItem="RTu-yb-Z51" firstAttribute="width" secondItem="xaJ-c2-SfQ" secondAttribute="width" id="c6u-wd-An5"/>
                             <constraint firstItem="BxR-hH-uRg" firstAttribute="leading" secondItem="nGO-gR-ckj" secondAttribute="trailing" constant="5" id="h2A-U5-25x"/>
                             <constraint firstItem="xd2-jy-0NR" firstAttribute="top" secondItem="sEM-Eo-yNU" secondAttribute="bottom" constant="5" id="iZN-zC-RcT"/>
+                            <constraint firstItem="ixA-1v-QAe" firstAttribute="leading" secondItem="Bu5-pT-TAj" secondAttribute="leading" constant="10" id="ja5-Vp-iC8"/>
                             <constraint firstItem="Bu5-pT-TAj" firstAttribute="trailing" secondItem="xaJ-c2-SfQ" secondAttribute="trailing" constant="10" id="kk4-i7-Mgo"/>
+                            <constraint firstItem="dXh-03-6MX" firstAttribute="leading" secondItem="ixA-1v-QAe" secondAttribute="trailing" constant="50" id="man-AQ-WC1"/>
                             <constraint firstItem="BxR-hH-uRg" firstAttribute="top" secondItem="Vs9-x7-bnl" secondAttribute="bottom" constant="5" id="n97-l7-Ovl"/>
                             <constraint firstItem="RTu-yb-Z51" firstAttribute="leading" secondItem="Bu5-pT-TAj" secondAttribute="leading" constant="10" id="pGD-KH-VnQ"/>
                             <constraint firstItem="Bu5-pT-TAj" firstAttribute="trailing" secondItem="8XR-0N-agv" secondAttribute="trailing" constant="10" id="rGI-yP-CXK"/>

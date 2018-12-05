@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -154,6 +155,7 @@
                         <outlet property="fioText" destination="5VV-k3-sLR" id="0og-vo-K1Z"/>
                         <outlet property="orderText" destination="hnV-Jh-abH" id="eUe-PX-xKe"/>
                         <outlet property="phoneText" destination="JlT-96-DvK" id="r65-zz-Mc6"/>
+                        <outlet property="tapMe" destination="Gi2-uY-nDO" id="yV2-8Z-SsL"/>
                         <outlet property="tovarTable" destination="aqZ-Af-uGR" id="NDC-6K-w7s"/>
                     </connections>
                 </viewController>

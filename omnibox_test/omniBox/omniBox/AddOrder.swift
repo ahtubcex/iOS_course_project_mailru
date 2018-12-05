@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 import RealmSwift
+import FirebaseDatabase
 
 class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+   
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -34,6 +37,8 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func addOrder(){
+        
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let today = dateFormatter.string(from: dataPick.date)  // from dataPicker to string date
@@ -48,17 +53,31 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
         new_order.items.append(objectsIn: items)
         print(new_order)
         
+    
+        var array : NSArray
+//        array = items.enumerated() as NSArray
+        for val in items.enumerated(){
+            print(val.element.item_name)
+//            array.addingObjects(from: items)
+        }
+//        print(array)
+
+        
         try! realm.write {
             realm.add(new_order)
+//            loadToFireBase(new_order: new_order)
         }
+        
+        
     }
     
-//    func splitDate(st : String) -> String{     //adding 5 days
-//        var date_to = st.components(separatedBy: "-")[0]
-//        date_to = String(Int(date_to)!+5)+"-"+st.components(separatedBy: "-")[1]+"-"+st.components(separatedBy: "-")[2]
-//        return date_to
-//    }
+//    func loadToFireBase(new_order : Order){
+//        var ref: DatabaseReference!
+//        ref = Database.database().reference()
+//        ref.child("orders").child(new_order.number).setValue(["number": new_order.number, "FIO": new_order.fio, "phone_number": new_order.phone_number, "arrive_date" : new_order.arr_date, "date_to" : new_order.date_to, "items": array])
 //
+//    }
+
     func callAddAlert(){
         let alertView = UIAlertController(title: "Добавление заказов", message: nil, preferredStyle: .alert)
         let add = UIAlertAction(title: "Добавить", style: .default) { (action) in
@@ -69,7 +88,7 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                 self.tovarTable.reloadData()
             }
-//            alertView.textFields![0].text
+
         }
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         alertView.addAction(add)
@@ -107,10 +126,18 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    @IBOutlet var tapMe: UIView!
     override func viewDidLoad() {
         tovarTable.dataSource = self
         tovarTable.delegate = self
         tovarTable.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyBord))
+        tapGesture.numberOfTapsRequired = 1
+        tapMe.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func hideKeyBord(){
+        self.view.endEditing(true)
     }
     
 }
