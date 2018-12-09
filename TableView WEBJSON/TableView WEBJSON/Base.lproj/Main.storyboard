@@ -67,10 +67,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-Uh-CSd">
-                                <rect key="frame" x="20" y="84" width="335" height="90"/>
+                                <rect key="frame" x="20" y="84" width="335" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="a7h-2t-SRA"/>
+                                    <constraint firstAttribute="height" constant="75" id="a7h-2t-SRA"/>
                                 </constraints>
                                 <state key="normal" title="Список оружия">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,30 +80,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUK-ak-OBY">
-                                <rect key="frame" x="20" y="194" width="335" height="90"/>
+                                <rect key="frame" x="20" y="179" width="335" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="4sb-Hg-Rxt"/>
+                                    <constraint firstAttribute="height" constant="75" id="4sb-Hg-Rxt"/>
                                 </constraints>
                                 <state key="normal" title="Список квестов">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NK-GE-3wV">
-                                <rect key="frame" x="20" y="304" width="335" height="90"/>
+                                <rect key="frame" x="20" y="274" width="335" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="fMH-ep-C1p"/>
+                                    <constraint firstAttribute="height" constant="75" id="fMH-ep-C1p"/>
                                 </constraints>
                                 <state key="normal" title="Карты">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDD-J7-bl1">
-                                <rect key="frame" x="20" y="414" width="335" height="90"/>
+                                <rect key="frame" x="20" y="369" width="335" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="15X-MM-Vtj"/>
+                                    <constraint firstAttribute="height" constant="75" id="15X-MM-Vtj"/>
                                 </constraints>
                                 <state key="normal" title="Форум">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
