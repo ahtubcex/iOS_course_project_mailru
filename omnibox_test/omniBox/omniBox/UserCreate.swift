@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 import RealmSwift
+import FirebaseDatabase
 
 class UserCreate : UIViewController{
-    
+    let realm = try! Realm()
     @IBAction func createButton(_ sender: Any) {
         addUser()
         self.dismiss(animated: true, completion: nil)
@@ -25,16 +26,23 @@ class UserCreate : UIViewController{
     
     @IBOutlet weak var passwordField: UITextField!
     
+    func upload(newUser : User){
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("users").child(newUser.user_id).setValue(["user_id": newUser.user_id, "password": newUser.password, "isAdmin": newUser.isAdmin])
+    }
+    
     func addUser(){
-        let realm = try! Realm()
+        
         print("userTable path:\n \(String(describing: realm.configuration.fileURL))")
         let newUser = User()
         newUser.user_id = loginField.text!
         newUser.password = passwordField.text!
         newUser.isAdmin = false
     
-        try! realm.write {
-            realm.add(newUser)
+        try! self.realm.write {
+            self.realm.add(newUser)
+            upload(newUser: newUser)
         }
     }
 }
