@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+
 import FirebaseDatabase
 
 
@@ -193,7 +194,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cur.is_sold = is_sold!
                 cur.call_status = call_status!
                 cur.comments = comments!
-                print(cur)
+                try! self.realm.write {
+                    self.realm.add(cur, update: true)
+                }
 
             }
         })
