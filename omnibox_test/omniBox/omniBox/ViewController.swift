@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         oldLabel.text = "Выкупленные заказы"
         self.oldSwitch.addTarget(self, action: #selector(changing(switch:)), for: .valueChanged)
         
-//        workFire()
+        workFire()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -150,27 +150,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-//    func workFire()
-//    {
-//        let databaseref = Database.database().reference()
-//        databaseref.child("users").observeSingleEvent(of: .value, with: {
-//            snapshot in
+    func workFire()
+    {
+        let databaseref = Database.database().reference()
+        databaseref.child("orders").observeSingleEvent(of: .value, with: {
+            snapshot in
 //            print(snapshot)
-//            for snap in snapshot.children.allObjects as! [DataSnapshot]{
-//                guard let dictionary = snap.value as? [String : AnyObject] else {
-//                    return
-//                }
-//                var name = dictionary["Name"] as? String
-//                var age = dictionary["Age"] as? Int
-//                print(name, age)
-//
-//                var UserToAdd = UserFire()
-//                UserToAdd.name = name
-//                UserToAdd.age.value = age
-//                UserToAdd.writeToRealm()
-//            }
-//        })
-//    }
+            for snap in snapshot.children.allObjects as! [DataSnapshot]{
+                guard let dictionary = snap.value as? [String : AnyObject] else {
+                    return
+                }
+                var name = dictionary["FIO"] as? String
+                var number = dictionary["number"] as? String
+                var arr = dictionary["arrive_date"] as? String
+                var date_to = dictionary["date_to"] as? String
+                var phone = dictionary["phone_number"] as? String
+                var is_sold = dictionary["sold"] as? Bool
+                var items_from = dictionary ["items"] as? [String : AnyObject]
+//                print(items_from)
+                
+                var special_arr = [Item]()
+                for values in (items_from!.values){
+                    var whos = Item()
+                    whos.item_name = (values["article"] as? String)!
+                    whos.size = (values["size"] as? String)!
+                    special_arr.append(whos)
+//                  print(whos)
+                }
+                
+                var cur = Order()
+                cur.items.append(objectsIn: special_arr)
+                cur.date_to = date_to!
+                cur.fio = name!
+                cur.number = number!
+                cur.phone_number = phone!
+                cur.arr_date = arr!
+                cur.is_sold = is_sold!
+                print(cur)
+
+            }
+        })
+    }
     
 }
 

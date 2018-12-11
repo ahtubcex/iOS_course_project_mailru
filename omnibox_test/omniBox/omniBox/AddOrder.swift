@@ -52,31 +52,24 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
         new_order.date_to = dateFormatter.string(from: date_to!)
         new_order.items.append(objectsIn: items)
         print(new_order)
-        
-    
-        var array : NSArray
-//        array = items.enumerated() as NSArray
-        for val in items.enumerated(){
-            print(val.element.item_name)
-//            array.addingObjects(from: items)
-        }
-//        print(array)
-
-        
+//
         try! realm.write {
             realm.add(new_order)
-//            loadToFireBase(new_order: new_order)
+        loadToFireBase(new_order: new_order)
         }
-        
+       print(realm.configuration.fileURL!)
         
     }
     
-//    func loadToFireBase(new_order : Order){
-//        var ref: DatabaseReference!
-//        ref = Database.database().reference()
-//        ref.child("orders").child(new_order.number).setValue(["number": new_order.number, "FIO": new_order.fio, "phone_number": new_order.phone_number, "arrive_date" : new_order.arr_date, "date_to" : new_order.date_to, "items": array])
-//
-//    }
+    func loadToFireBase(new_order : Order){
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("orders").child(new_order.number).setValue(["number": new_order.number, "FIO": new_order.fio, "phone_number": new_order.phone_number, "arrive_date" : new_order.arr_date, "date_to" : new_order.date_to, "sold": false]) // добавление заказа
+        for val in items.enumerated(){   //добавление товаров
+            ref.child("orders").child(new_order.number).child("items").child(val.element.item_name).setValue(["article": val.element.item_name, "size":val.element.size])
+        }
+        
+    }
 
     func callAddAlert(){
         let alertView = UIAlertController(title: "Добавление заказов", message: nil, preferredStyle: .alert)
