@@ -14,5 +14,7 @@ class User: Object{
     @objc dynamic var password : String = "password"
     @objc dynamic var isAdmin : Bool = false
 
-    
+    override static func primaryKey() -> String?{
+        return "user_id"
+    }
 }

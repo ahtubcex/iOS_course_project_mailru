@@ -20,5 +20,8 @@ class Order: Object {
     @objc dynamic var is_sold : Bool = false
     @objc dynamic var comments : String = ""
     @objc dynamic var call_status : Bool = false
-    
+   
+    override static func primaryKey() -> String?{
+        return "number"
+    }
 }

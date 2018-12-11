@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 import MessageUI
+import FirebaseDatabase
 
 
 class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
@@ -90,11 +91,17 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
         if (commentField.text != order.comments) {
             try! realm.write {
                 order.comments = commentField.text!
             }
+            ref.child("orders").child(order.number).updateChildValues(["comments": commentField.text!])
+        }else{
+            ref.child("orders").child(order.number).updateChildValues(["call_status": statusSwitch.isOn])
         }
+        
     }
   
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -105,7 +112,7 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
         composeVC.messageComposeDelegate = self
         
         composeVC.recipients = ["\(order.phone_number)"]
-        composeVC.body = "Ваш заказ: \(order.number) готов. Будем рады вас видеть"
+        composeVC.body = "Ваш заказ: \(order.number) готов. Будем рады вас видеть. Крайний срок : \(order.date_to)"
         
         if MFMessageComposeViewController.canSendText() {
             self.present(composeVC, animated: true, completion: nil)

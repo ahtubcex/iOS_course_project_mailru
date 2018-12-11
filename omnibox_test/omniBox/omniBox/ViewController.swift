@@ -67,19 +67,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if !(user.isAdmin){
             self.navigationItem.rightBarButtonItems = []
         }
-//        self.tableView.reloadData()
+
     }
 
     func getAllOrders(){
         let zakazy = realm.objects(Order.self)
         orders = Array(zakazy)
-//        print(orders.count)
+
     }
     
     func getOrders(){
         let zakazy = realm.objects(Order.self).filter("is_sold == false")
         orders = Array(zakazy)
-//        print(orders.count)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,9 +117,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-
+//здесь меняется статус заказа
         let row = indexPath.row
         let editingRow = orders[row]
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("orders").child(self.orders[row].number).updateChildValues(["sold": !(self.orders[row].is_sold)])
 
         let deleteAction = UITableViewRowAction(style: .normal , title: "Выкуплен") { _,_ in
             try! self.realm.write {
@@ -150,7 +154,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func workFire()
+    func workFire()  //прогружает данные из FIREBASE в REALM
     {
         let databaseref = Database.database().reference()
         databaseref.child("orders").observeSingleEvent(of: .value, with: {
@@ -160,13 +164,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 guard let dictionary = snap.value as? [String : AnyObject] else {
                     return
                 }
-                var name = dictionary["FIO"] as? String
-                var number = dictionary["number"] as? String
-                var arr = dictionary["arrive_date"] as? String
-                var date_to = dictionary["date_to"] as? String
-                var phone = dictionary["phone_number"] as? String
-                var is_sold = dictionary["sold"] as? Bool
+                let name = dictionary["FIO"] as? String
+                let number = dictionary["number"] as? String
+                let arr = dictionary["arrive_date"] as? String
+                let date_to = dictionary["date_to"] as? String
+                let phone = dictionary["phone_number"] as? String
+                let is_sold = dictionary["sold"] as? Bool
                 var items_from = dictionary ["items"] as? [String : AnyObject]
+                let call_status = dictionary["call_status"] as? Bool
+                let comments = dictionary["comments"] as? String
 //                print(items_from)
                 
                 var special_arr = [Item]()
@@ -175,7 +181,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     whos.item_name = (values["article"] as? String)!
                     whos.size = (values["size"] as? String)!
                     special_arr.append(whos)
-//                  print(whos)
                 }
                 
                 var cur = Order()
@@ -186,6 +191,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cur.phone_number = phone!
                 cur.arr_date = arr!
                 cur.is_sold = is_sold!
+                cur.call_status = call_status!
+                cur.comments = comments!
                 print(cur)
 
             }

@@ -94,7 +94,7 @@ func callAlert(){
                 newUser.isAdmin = isAdmin!
 
                 try! self.realm.write {
-                    self.realm.add(newUser)
+                    self.realm.add(newUser, update: true)
                 }
 
             }
