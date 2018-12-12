@@ -188,7 +188,7 @@
             <objects>
                 <viewController id="uhq-yY-s53" userLabel="Display Order Controller" customClass="DisplayOrderViewController" customModule="omniBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cjf-GQ-jcO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XR-0N-agv">
@@ -320,6 +320,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bu5-pT-TAj"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="arrDateLabel" destination="RTu-yb-Z51" id="DnE-2E-ahd"/>
                         <outlet property="commentField" destination="nGO-gR-ckj" id="veM-bu-Mvz"/>

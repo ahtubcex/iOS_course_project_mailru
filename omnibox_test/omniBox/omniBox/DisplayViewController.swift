@@ -40,10 +40,10 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
         orderTable.dataSource = self
         orderTable.delegate = self
         orderTable.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
-//        orderTable.isHidden = true
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyBord))
-//        tapGesture.numberOfTapsRequired = 1
-//        tapMe.addGestureRecognizer(tapGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyBord))
+        tapGesture.numberOfTapsRequired = 1
+        tapMe.addGestureRecognizer(tapGesture)
     }
     
     @objc func hideKeyBord(){

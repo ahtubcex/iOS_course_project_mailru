@@ -66,7 +66,7 @@ class AddOrder: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ref = Database.database().reference()
         ref.child("orders").child(new_order.number).setValue(["number": new_order.number, "FIO": new_order.fio, "phone_number": new_order.phone_number, "arrive_date" : new_order.arr_date, "date_to" : new_order.date_to, "sold": false, "comments": "","call_status" : false]) // добавление заказа
         for val in items.enumerated(){   //добавление товаров
-            ref.child("orders").child(new_order.number).child("items").child(val.element.item_name).setValue(["article": val.element.item_name, "size":val.element.size])
+            ref.child("orders").child(new_order.number).child("items").child(val.element.item_name).setValue(["article": val.element.item_name, "size":val.element.size,"photo_url": ""])
         }
         
     }
