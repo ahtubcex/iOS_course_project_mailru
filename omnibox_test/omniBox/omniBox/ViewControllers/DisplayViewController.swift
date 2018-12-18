@@ -123,9 +123,9 @@ class DisplayOrderViewController : UIViewController, UITableViewDelegate, UITabl
     }
     @IBAction func callButton(_ sender: Any) {
         print("im here")
-        var phone = "TEL://\(order.phone_number)"
+        let phone = "TEL://\(order.phone_number)"
         print(phone)
-        var url: NSURL = NSURL(string: phone)!
+        let url: NSURL = NSURL(string: phone)!//let _=url
         UIApplication.shared.openURL(url as URL)
         
     }

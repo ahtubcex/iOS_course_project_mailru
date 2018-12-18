@@ -70,6 +70,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FD6EC2421C9022200B44A9A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7DF271DA21AD7568007C270C /* orderCell.xib */,
+				7DF271DC21AD7576007C270C /* orderCell.swift */,
+				7D5B11FD21B1831A00A25CE0 /* itemCell.xib */,
+				7DA414A121B60E9100C5AE7C /* UserFire.swift */,
+				7D5B120121B1834200A25CE0 /* itemCell.swift */,
+				7DD61CB221A6B0A0009D5294 /* User.swift */,
+				7D7C261521AB6313008AF36E /* Order.swift */,
+				7DD61CB421A6B43B009D5294 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1FD6EC2521C9034000B44A9A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7DD61CA221A6ABA5009D5294 /* ViewController.swift */,
+				7D2CB8CA21AC68410027CD8D /* LoginViewController.swift */,
+				7DD61CA421A6ABA5009D5294 /* Main.storyboard */,
+				7D7C261921AB669B008AF36E /* AddOrder.swift */,
+				7D7C261721AB65EE008AF36E /* AddOrder.storyboard */,
+				7DF271DE21AE8AFB007C270C /* DisplayViewController.swift */,
+				7D2CB8CE21AC6C5C0027CD8D /* UserCreate.swift */,
+				7D2CB8CC21AC6C4D0027CD8D /* UserCreate.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3678FF2BAB0639EC48D46615 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,27 +138,13 @@
 		7DD61C9F21A6ABA5009D5294 /* omniBox */ = {
 			isa = PBXGroup;
 			children = (
-				7DA4149F21B607F700C5AE7C /* GoogleService-Info.plist */,
 				7DD61CA021A6ABA5009D5294 /* AppDelegate.swift */,
-				7DD61CA221A6ABA5009D5294 /* ViewController.swift */,
-				7DD61CA421A6ABA5009D5294 /* Main.storyboard */,
-				7DF271DE21AE8AFB007C270C /* DisplayViewController.swift */,
+				1FD6EC2421C9022200B44A9A /* Models */,
+				1FD6EC2521C9034000B44A9A /* ViewControllers */,
 				7DD61CA921A6ABA6009D5294 /* LaunchScreen.storyboard */,
 				7D5B11FB21AF0F2000A25CE0 /* Assets.xcassets */,
+				7DA4149F21B607F700C5AE7C /* GoogleService-Info.plist */,
 				7DD61CAC21A6ABA6009D5294 /* Info.plist */,
-				7DD61CB221A6B0A0009D5294 /* User.swift */,
-				7DD61CB421A6B43B009D5294 /* Item.swift */,
-				7D7C261521AB6313008AF36E /* Order.swift */,
-				7D7C261721AB65EE008AF36E /* AddOrder.storyboard */,
-				7D7C261921AB669B008AF36E /* AddOrder.swift */,
-				7D2CB8CA21AC68410027CD8D /* LoginViewController.swift */,
-				7D2CB8CC21AC6C4D0027CD8D /* UserCreate.storyboard */,
-				7D2CB8CE21AC6C5C0027CD8D /* UserCreate.swift */,
-				7DF271DA21AD7568007C270C /* orderCell.xib */,
-				7DF271DC21AD7576007C270C /* orderCell.swift */,
-				7D5B11FD21B1831A00A25CE0 /* itemCell.xib */,
-				7D5B120121B1834200A25CE0 /* itemCell.swift */,
-				7DA414A121B60E9100C5AE7C /* UserFire.swift */,
 			);
 			path = omniBox;
 			sourceTree = "<group>";
@@ -425,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TNSCV9KL43;
+				DEVELOPMENT_TEAM = P9784LPU65;
 				INFOPLIST_FILE = omniBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,7 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TNSCV9KL43;
+				DEVELOPMENT_TEAM = P9784LPU65;
 				INFOPLIST_FILE = omniBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (

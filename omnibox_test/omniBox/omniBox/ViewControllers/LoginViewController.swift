@@ -14,6 +14,7 @@ import FirebaseDatabase
 class LoginViewController : UIViewController{
     
     private let seguename = "toMain"
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func loginButton(_ sender: Any) {
@@ -103,6 +104,9 @@ func callAlert(){
     
     override func viewDidLoad() {
         downloadFromFire()
+    
+        
+    //  self.view = view
     }
     
 }
