@@ -1,2 +1,3 @@
 # mail_ios_course
-w/ Artyooom
+iOs project with github.com/casperancho
+
