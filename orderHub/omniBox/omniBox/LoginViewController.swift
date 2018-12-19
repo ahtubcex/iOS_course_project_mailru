@@ -19,7 +19,7 @@ class LoginViewController : UIViewController{
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func loginButton(_ sender: Any) {
-        checkRegistrated()
+        //checkRegistrated()
     }
     @IBAction func signButton(_ sender: UIButton) {
         

@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iff-3e-Aix">
-                                <rect key="frame" x="10" y="264" width="355" height="203"/>
+                                <rect key="frame" x="10" y="84" width="355" height="203"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uOl-GN-4Jb">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="41"/>
@@ -117,8 +117,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Iff-3e-Aix" firstAttribute="top" secondItem="pBX-qI-MOk" secondAttribute="top" constant="200" id="Zzy-lZ-fZe"/>
-                            <constraint firstItem="pBX-qI-MOk" firstAttribute="bottom" secondItem="Iff-3e-Aix" secondAttribute="bottom" constant="200" id="a6n-lL-qS9"/>
+                            <constraint firstItem="Iff-3e-Aix" firstAttribute="top" secondItem="pBX-qI-MOk" secondAttribute="top" constant="20" id="Zzy-lZ-fZe"/>
+                            <constraint firstItem="pBX-qI-MOk" firstAttribute="bottom" secondItem="Iff-3e-Aix" secondAttribute="bottom" constant="380" id="a6n-lL-qS9"/>
                             <constraint firstItem="pBX-qI-MOk" firstAttribute="trailing" secondItem="Iff-3e-Aix" secondAttribute="trailing" constant="10" id="dgp-ay-3kx"/>
                             <constraint firstItem="Iff-3e-Aix" firstAttribute="leading" secondItem="pBX-qI-MOk" secondAttribute="leading" constant="10" id="yp0-tP-q2q"/>
                         </constraints>
@@ -143,7 +143,7 @@
                 <viewControllerPlaceholder storyboardName="UserCreate" id="23p-0F-N1C" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbw-ls-NbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="542"/>
+            <point key="canvasLocation" x="-1498" y="509"/>
         </scene>
         <!--Заказы-->
         <scene sceneID="q3S-VR-ttZ">
@@ -184,7 +184,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Выход" style="plain" id="b8y-a5-wHc">
                             <color key="tintColor" red="1" green="0.26031070119999999" blue="0.30606030249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="exitButton:" destination="y9n-of-yDt" id="BUr-8g-QzD"/>
+                                <action selector="exitButtonPressed:" destination="y9n-of-yDt" id="k83-O3-GRB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="sYr-3L-7Fl">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iun-Mc-vWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226.40000000000001" y="108.39580209895054"/>
+            <point key="canvasLocation" x="-582" y="107"/>
         </scene>
         <!--Display Order Controller-->
         <scene sceneID="Y7s-WF-zb1">

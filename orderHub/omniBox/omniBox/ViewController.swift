@@ -87,6 +87,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    @IBAction func exitButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func getAllOrders(){
         let zakazy = realm.objects(Order.self)
         orders = Array(zakazy)
@@ -136,7 +139,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 //здесь меняется статус заказа
         let row = indexPath.row
-        let editingRow = orders[row]
+        let _ = orders[row]//let editingRow =
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
