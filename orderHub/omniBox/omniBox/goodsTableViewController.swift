@@ -1,13 +1,14 @@
 //
-//  QRCodeViewController.swift
+//  goodsTableViewController.swift
 //  omniBox
 //
-//  Created by Ибрагим on 18/12/2018.
+//  Created by Ибрагим on 19/12/2018.
 //  Copyright © 2018 bmstu. All rights reserved.
 //
+
 import UIKit
 
-class QRCodeViewController: UIViewController {
+class goodsTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +16,7 @@ class QRCodeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 

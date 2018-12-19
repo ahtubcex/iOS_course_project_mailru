@@ -29,6 +29,8 @@ class LoginViewController : UIViewController{
                 performSegue(withIdentifier: seguename, sender: UIButton.self)
             }else{
             print("new user")
+                //signButton.setImage(_ image: UIImage("regButton"), for: UIControl.State.Normal)
+                
             }
         }
     }
@@ -43,9 +45,11 @@ class LoginViewController : UIViewController{
         isSignIn = !isSignIn
         
         if isSignIn {
-            signButton.setTitle("Войти", for: .normal)
+            signButton.setTitle("", for: .normal)
+            signButton.setImage(UIImage(named: "enterButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }else{
-            signButton.setTitle("Зарегестрироваться", for: .normal)
+            signButton.setTitle("", for: .normal)
+            signButton.setImage(UIImage(named: "regButton")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
         
     }

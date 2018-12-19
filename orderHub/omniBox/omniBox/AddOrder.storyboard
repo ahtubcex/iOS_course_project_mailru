@@ -95,6 +95,7 @@
                                     <segment title="Ввод вручную"/>
                                     <segment title="QR-код"/>
                                 </segments>
+                                <color key="tintColor" red="0.92886120080000001" green="0.24636679889999999" blue="0.34201174969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentValueChanged:" destination="EoN-eJ-WcQ" eventType="valueChanged" id="kMl-bh-rUX"/>
                                 </connections>
@@ -148,7 +149,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYl-e8-bdK">
                                 <rect key="frame" x="112.5" y="218.5" width="150" height="150"/>
-                                <color key="tintColor" red="0.90697211030000002" green="0.21340996030000001" blue="0.1930941343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.92941027880000004" green="0.26304230090000003" blue="0.3515560627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="focus"/>
                                 <connections>
                                     <segue destination="xkO-m8-roy" kind="show" id="SZJ-DZ-S4h"/>
@@ -178,6 +179,7 @@
                             <constraint firstItem="qxg-BF-sZx" firstAttribute="leading" secondItem="E6C-FH-JiG" secondAttribute="leading" constant="55" id="cOd-3A-HwX"/>
                             <constraint firstAttribute="trailing" secondItem="qxg-BF-sZx" secondAttribute="trailing" constant="10" id="t3r-Ip-5b2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PUt-6c-xYq"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aih-G9-nvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ySp-wd-7Mt">
-                                <rect key="frame" x="27.5" y="116" width="320" height="150"/>
+                                <rect key="frame" x="27.5" y="136" width="320" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="aj4-wA-UJt"/>
                                 </constraints>
@@ -209,7 +211,7 @@
                                 <locale key="locale" localeIdentifier="ru"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObV-u7-ZAm">
-                                <rect key="frame" x="242" y="456" width="103" height="30"/>
+                                <rect key="frame" x="242" y="476" width="103" height="30"/>
                                 <state key="normal" title="Создать заказ"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="qcQ-18-nKV" eventType="touchUpInside" id="pSf-m2-nE7"/>
@@ -217,7 +219,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcs-E7-01B">
-                                <rect key="frame" x="50" y="456" width="56" height="30"/>
+                                <rect key="frame" x="50" y="476" width="56" height="30"/>
                                 <state key="normal" title="Отмена">
                                     <color key="titleColor" red="1" green="0.27450826439999998" blue="0.3779731717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -226,27 +228,27 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ФИО" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQG-LL-hvl">
-                                <rect key="frame" x="87.5" y="36" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="46" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="uAx-eY-5L3"/>
+                                    <constraint firstAttribute="height" constant="40" id="uAx-eY-5L3"/>
                                     <constraint firstAttribute="width" constant="200" id="xEh-Xg-rcr"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="номер телефона" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVi-Qc-526">
-                                <rect key="frame" x="87.5" y="68" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="88" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2ZS-GH-2Vh"/>
-                                    <constraint firstAttribute="height" constant="30" id="txW-rl-H0W"/>
+                                    <constraint firstAttribute="height" constant="40" id="txW-rl-H0W"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Добавление товаров" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-3L-hV6">
-                                <rect key="frame" x="100" y="271" width="168" height="15"/>
+                                <rect key="frame" x="100" y="291" width="168" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ZmQ-Fo-Snw"/>
                                 </constraints>
@@ -255,7 +257,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jtU-te-vBw">
-                                <rect key="frame" x="21" y="296" width="333" height="150"/>
+                                <rect key="frame" x="21" y="316" width="333" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <navigationBar key="tableFooterView" contentMode="scaleToFill" id="0X4-E2-VL0">
                                     <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
@@ -273,13 +275,13 @@
                                 </navigationBar>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="номер заказа" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmq-kB-Aft">
-                                <rect key="frame" x="87.5" y="4" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="4" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Slk-xt-iZu"/>
+                                    <constraint firstAttribute="height" constant="40" id="Slk-xt-iZu"/>
                                     <constraint firstAttribute="width" constant="200" id="gPe-R4-Oto"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -309,6 +311,7 @@
                             <constraint firstItem="iQG-LL-hvl" firstAttribute="top" secondItem="vmq-kB-Aft" secondAttribute="bottom" constant="2" id="xWg-Cu-0Tj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jtU-te-vBw" secondAttribute="trailing" constant="5" id="xaN-UQ-w66"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2rr-2y-Omy"/>
                     </view>
                     <connections>
                         <outlet property="dataPick" destination="ySp-wd-7Mt" id="cgk-HK-GVp"/>
