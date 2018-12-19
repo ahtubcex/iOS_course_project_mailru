@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var orders = [Order]()
     let cellName = "orderCell"
     let seguename = "toOrder"
+    let fail = "fail"
+    
     
     lazy var refresh : UIRefreshControl = {  //сделал для обновления данных после добавления
         var refresh = UIRefreshControl()
@@ -42,7 +44,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         print(realm.configuration.fileURL!)
-        print("user is \(user.user_id)")
+        let cur = user.user_id
+        if cur == "not_logged"{
+            performSegue(withIdentifier: fail, sender: Any?.self)
+        }
+//        print("user is \(user.user_id)")
+        print("user is \(user)")
         getOrders()
         tableView.dataSource = self
         tableView.delegate = self
@@ -65,9 +72,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !(user.isAdmin){
-            self.navigationItem.rightBarButtonItems = []
-        }
+//        if (user.isAdmin){
+//            print("Im here")
+//            self.navigationItem.rightBarButtonItems = []
+//        }
 
     }
 
@@ -125,8 +133,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var ref: DatabaseReference!
         ref = Database.database().reference()
         ref.child("orders").child(self.orders[row].number).updateChildValues(["sold": !(self.orders[row].is_sold)])
-
-        let deleteAction = UITableViewRowAction(style: .normal , title: "Выкуплен") { _,_ in
+        
+        var vikup_title = ""
+        if self.orders[row].is_sold {
+          vikup_title = "Не Выкуплен"
+        }else{
+            vikup_title = "Выкуплен"
+        }
+        
+        
+        let deleteAction = UITableViewRowAction(style: .normal , title: vikup_title ) { _,_ in
             try! self.realm.write {
             self.orders[row].is_sold = !(self.orders[row].is_sold)
                 self.oldSwitch.setOn(false, animated: true)

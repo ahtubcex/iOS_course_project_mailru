@@ -65,7 +65,7 @@ func callAlert(){
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == seguename{
             guard
-            let vc = segue.destination as? ViewController
+                let vc = segue.destination as? ViewController
                 else {return}
             let realm = try! Realm()
             let login = loginField.text!

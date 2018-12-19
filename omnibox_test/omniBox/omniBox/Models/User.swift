@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class User: Object{
-    @objc dynamic var user_id : String = "user"
+    @objc dynamic var user_id : String = "not_logged"
     @objc dynamic var password : String = "password"
     @objc dynamic var isAdmin : Bool = false
 
