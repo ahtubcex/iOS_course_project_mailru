@@ -163,9 +163,12 @@
                                     <constraint firstAttribute="height" constant="30" id="Izm-n4-bWJ"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Актуальные"/>
+                                    <segment title="Все"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segControl:" destination="y9n-of-yDt" eventType="valueChanged" id="GzV-NA-jVC"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,6 +197,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segment" destination="NHM-b5-Ly1" id="tLu-o7-sn9"/>
                         <outlet property="tableView" destination="Opc-wT-TAY" id="hHH-7R-Znd"/>
                         <segue destination="uhq-yY-s53" kind="show" identifier="toOrder" id="OHz-6J-Meo"/>
                     </connections>

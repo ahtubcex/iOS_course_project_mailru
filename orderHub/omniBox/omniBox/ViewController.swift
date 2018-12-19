@@ -13,14 +13,28 @@ import FirebaseDatabase
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBAction func switchedAction(_ sender: Any) {
-        
-    }
+   
     
-    
+    var full = false
     @IBOutlet weak var oldLabel: UILabel!
     @IBOutlet weak var oldSwitch: UISwitch!
-
+    
+    @IBOutlet weak var segment: UISegmentedControl!
+    @IBAction func segControl(_ sender: Any) {
+        full = !full
+        if full{
+            getAllOrders()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }else{
+           getOrders()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     @IBAction func exitButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -60,6 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        self.oldSwitch.addTarget(self, action: #selector(changing(switch:)), for: .valueChanged)
         
         workFire()
+        self.navigationItem.title = user.user_id
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -72,9 +87,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if !(user.isAdmin){
-//            self.navigationItem.rightBarButtonItems = []
-//        }
+        if !(user.isAdmin){
+            self.navigationItem.rightBarButtonItems = []
+        }
         
 
     }
