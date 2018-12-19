@@ -16,6 +16,8 @@
 		7D5B11FC21AF0F2000A25CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B11FB21AF0F2000A25CE0 /* Assets.xcassets */; };
 		7D5B11FE21B1831A00A25CE0 /* itemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B11FD21B1831A00A25CE0 /* itemCell.xib */; };
 		7D5B120221B1834200A25CE0 /* itemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B120121B1834200A25CE0 /* itemCell.swift */; };
+		7D68607321CA884E007E1B86 /* accountInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D68607221CA884E007E1B86 /* accountInfo.storyboard */; };
+		7D68607521CA894F007E1B86 /* accountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68607421CA894F007E1B86 /* accountInfo.swift */; };
 		7D7C261621AB6313008AF36E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C261521AB6313008AF36E /* Order.swift */; };
 		7D7C261821AB65EE008AF36E /* AddOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7C261721AB65EE008AF36E /* AddOrder.storyboard */; };
 		7D7C261A21AB669B008AF36E /* AddOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7C261921AB669B008AF36E /* AddOrder.swift */; };
@@ -43,6 +45,8 @@
 		7D5B11FB21AF0F2000A25CE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D5B11FD21B1831A00A25CE0 /* itemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = itemCell.xib; sourceTree = "<group>"; };
 		7D5B120121B1834200A25CE0 /* itemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemCell.swift; sourceTree = "<group>"; };
+		7D68607221CA884E007E1B86 /* accountInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = accountInfo.storyboard; sourceTree = "<group>"; };
+		7D68607421CA894F007E1B86 /* accountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountInfo.swift; sourceTree = "<group>"; };
 		7D7C261521AB6313008AF36E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		7D7C261721AB65EE008AF36E /* AddOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddOrder.storyboard; sourceTree = "<group>"; };
 		7D7C261921AB669B008AF36E /* AddOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrder.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				7DD61CA021A6ABA5009D5294 /* AppDelegate.swift */,
 				7DD61CA221A6ABA5009D5294 /* ViewController.swift */,
 				7DD61CA421A6ABA5009D5294 /* Main.storyboard */,
+				7D68607221CA884E007E1B86 /* accountInfo.storyboard */,
+				7D68607421CA894F007E1B86 /* accountInfo.swift */,
 				7DF271DE21AE8AFB007C270C /* DisplayViewController.swift */,
 				7DD61CA921A6ABA6009D5294 /* LaunchScreen.storyboard */,
 				7D5B11FB21AF0F2000A25CE0 /* Assets.xcassets */,
@@ -204,6 +210,7 @@
 			files = (
 				7DF271DB21AD7568007C270C /* orderCell.xib in Resources */,
 				7DA414A021B607F700C5AE7C /* GoogleService-Info.plist in Resources */,
+				7D68607321CA884E007E1B86 /* accountInfo.storyboard in Resources */,
 				7DD61CAB21A6ABA6009D5294 /* LaunchScreen.storyboard in Resources */,
 				7DD61CA621A6ABA5009D5294 /* Main.storyboard in Resources */,
 				7D7C261821AB65EE008AF36E /* AddOrder.storyboard in Resources */,
@@ -225,6 +232,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-omniBox/Pods-omniBox-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -235,6 +243,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -280,6 +289,7 @@
 				7DD61CA321A6ABA5009D5294 /* ViewController.swift in Sources */,
 				7D5B120221B1834200A25CE0 /* itemCell.swift in Sources */,
 				7D7C261621AB6313008AF36E /* Order.swift in Sources */,
+				7D68607521CA894F007E1B86 /* accountInfo.swift in Sources */,
 				7DD61CA121A6ABA5009D5294 /* AppDelegate.swift in Sources */,
 				7DA414A221B60E9100C5AE7C /* UserFire.swift in Sources */,
 				7DF271DF21AE8AFB007C270C /* DisplayViewController.swift in Sources */,
