@@ -1,3 +1,9 @@
 # mail_ios_course
-iOs project with github.com/casperancho
+## Reebok Orders Helper
+### iOs project with github.com/casperancho
+#### Стек технологий:
+swift/objC
+firebase
+firebase storage
+Realm
 
